@@ -85,7 +85,7 @@ stackedImage=stackedImage.toInt16();
 Export.image.toDrive({
   image: stackedImage,
   description: 'L8_Clean_Composite',
-  //bucket: 'your-gcs-bucket-name',             // 🔁 Replace with your GCS bucket
+  //bucket: 'Yao_HMA',             // 🔁 Replace with your GCS bucket
   fileNamePrefix: 'landsat8_clean_composite_HMA',
   region: roi_geometry,
   scale: 30,
