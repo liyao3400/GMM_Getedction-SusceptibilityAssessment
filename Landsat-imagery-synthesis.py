@@ -9,7 +9,7 @@ var roi_geometry = roi.geometry();
 // Step 2: Load Landsat-8 Surface Reflectance data
 var l82015 = ee.ImageCollection('LANDSAT/LC08/C02/T1_L2')
   .filterBounds(roi_geometry)
-  .filterDate('2015-1-01', '2015-11-30')
+  .filterDate('2015-9-01', '2015-11-30')
   .filter(ee.Filter.lt('CLOUD_COVER', 15))
   .select(['SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'QA_PIXEL']);
 
@@ -38,10 +38,10 @@ composite2015 = composite2015.toInt16();
 
 var l82020 = ee.ImageCollection('LANDSAT/LC08/C02/T1_L2')
   .filterBounds(roi_geometry)
-  .filterDate('2021-1-01', '2021-11-30')
+  .filterDate('2020-9-01', '2020-11-30')
   .filter(ee.Filter.lt('CLOUD_COVER', 15))
   .select(['SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'QA_PIXEL']);
-var cleanCollection2020 = l82015.map(maskCloudSnow)
+var cleanCollection2020 = l82020.map(maskCloudSnow)
   .select(['SR_B2','SR_B3', 'SR_B4', 'SR_B5']);  // Blue, Green, Red, NIR
 
 // Step 5: Create median composite (or use .mosaic() for most recent pixels)
