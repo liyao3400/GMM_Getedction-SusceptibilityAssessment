@@ -1,0 +1,1 @@
+This project was developed to detect glacier-related mass movements and assess their susceptibility in the HMA. For questions or potential applications to other research areas, please contact me at yaoli@mail.tsinghua.edu.cn.
